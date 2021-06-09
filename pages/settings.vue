@@ -116,10 +116,14 @@
     <AppSection ref="proxy" :label="$t('proxy')" no-legend>
       <div class="flex flex-col">
         <label>{{ $t("proxy") }}</label>
+        <span class="info">
+          {{ $t("proxy") }} {{ $t("is_under_maintenance") }}
+        </span>
         <div class="row-wrapper">
           <span>
             <SmartToggle
               :on="PROXY_ENABLED"
+              disabled
               @change="toggleSetting('PROXY_ENABLED')"
             >
               {{ $t("proxy") }}

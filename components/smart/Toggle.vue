@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-block cursor-pointer" @click="toggle()">
+  <div class="inline-block cursor-pointer" @click="disabled ? '' : toggle()">
     <label ref="toggle" class="toggle" :class="{ on: on }">
       <span class="handle"></span>
     </label>
@@ -13,6 +13,10 @@
 export default {
   props: {
     on: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },
